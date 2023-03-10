@@ -4,7 +4,7 @@ import { initializeApp } from "firebase/app";
 import { getFirestore, collection, doc, addDoc, getDocs, getDoc, updateDoc, deleteDoc } from 'firebase/firestore'
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyB9ZlCXBGO968430UD0wqCp-T6a084Xthg",
+    apiKey: process.env.API_KEY,
     authDomain: "e-commerce-jap-verduleria.firebaseapp.com",
     projectId: "e-commerce-jap-verduleria",
     storageBucket: "e-commerce-jap-verduleria.appspot.com",
