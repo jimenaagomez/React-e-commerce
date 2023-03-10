@@ -1,7 +1,11 @@
 import { useCarritoContext } from "../../context/CarritoContext"
+import { ItemCount } from "../ItemCount/ItemCount"
 
 export const ItemCart = ({item}) => {
-     const {removeItem} = useCarritoContext()
+     const {removeItem, addItem} = useCarritoContext()
+     const onAdd = (cantidad) => {
+        addItem(item, cantidad)
+      }
 
     return (
         <div className="card mt-3 cardCart  ">
@@ -15,6 +19,8 @@ export const ItemCart = ({item}) => {
                         <p className="card-text">Cantidad: {item.cant}  </p>
                         <p className="card-text">Precio unitario: ${new Intl.NumberFormat('de-DE').format(item.precio)} </p>
                         <p className="card-text"> Subtotal: ${new Intl.NumberFormat('de-DE').format(item.cant * item.precio)} </p>
+                        <ItemCount ValInicial={1} stock={item.stock} onAdd={onAdd} />
+
                         <button className="btn btn-primary " onClick={() => removeItem(item.id)}>Remover</button>
                     </div>
                 </div>
