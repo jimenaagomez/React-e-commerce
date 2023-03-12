@@ -18,9 +18,6 @@ import { ToastContainer} from 'react-toastify';
 //import { updateProducto, deleteProduct } from '../utils/firebase';
 import { CarritoProvider } from '../context/CarritoContext';
 
-//Browser router Aca esta englobadas todas las rutas
-//<Routes> rutas especificas
-//route especifico de cada ruta
 export const App = () => {
   return (
     <>

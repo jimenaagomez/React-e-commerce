@@ -12,19 +12,8 @@ const firebaseConfig = {
     appId: "1:241152151623:web:dd180ce81c432b65cea162"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const db = getFirestore()//reference to my bdd
-
-/* 
-CRUD 
-create 
-read 
-update 
-delate
-
-
-*/
+const db = getFirestore()
 
 export const cargarBDD = async () => {
     const promise = await fetch('./json/productos.json')
@@ -38,11 +27,10 @@ export const cargarBDD = async () => {
                 precio: prod.precio,
                 img: prod.img,
                 categoria: prod.categoria
-            })   //collection si existe mi prod, lo consulta, si no lo crea y lo consulta     
+            })   
     });
 }
 
-//getDoc y get Docs
 export const getProductos = async () => {
     const productos = await getDocs(collection(db, "productos"))
     const items = productos.docs.map(prod => {
@@ -57,7 +45,7 @@ export const getProducto = async (id) => {
     return item
 }
 
-//
+
 export const updateProducto = async (id, info) => {
     await updateDoc(doc(db, "productos", id), info)
 }
@@ -66,7 +54,6 @@ export const deleteProducto = async (id) => {
     await deleteDoc(doc(db, "productos", id))
 }
 
-//CREATE AND READ ORDEN DE COMPRA
 
 export const createOrdenCompra = async (cliente, productos, precioTotal, fecha) => {
     const ordenCompra = await addDoc(collection(db, "ordenesCompra"), {

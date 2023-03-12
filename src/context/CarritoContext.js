@@ -8,34 +8,23 @@ export const CarritoProvider = (props) => {
 
     const [carrito, setCarrito] = useState([])
 
-    //Si existe producto en el carrito
     const isInCart = (id) => {
-        //Si existe el producto lo retorna, si no existo retorna undefined 
         return carrito.find(prod => prod.id === id)
     }
 
-    //Agregar producto en el carrito
 
     const addItem = (producto, cantidad) => {
-        //Si existe en el carrito, modifico las cantidades
         if (isInCart(producto.id)) {
             const indice = carrito.findIndex(prod => prod.id === producto.id)
             const aux = [...carrito]
             aux[indice].cant = cantidad
             setCarrito(aux)
-            //aux es copia
         } else {
-            //Si no existe en el carrito, lo creo y lo guardo
             const prodCart = {
                 ...producto,
                 cant: cantidad
-                //... operador spreed hace una copia del producto
             }
-            /*
-                const aux = [...carrito]
-                aux.push(prodCart)
-                setCarrito(aux)
-            */
+           
 
             setCarrito([...carrito, prodCart])
         }
@@ -45,8 +34,6 @@ export const CarritoProvider = (props) => {
     //Eliminar producto del carrito
 
     const removeItem = (id) => {
-        //const indice = carrito.findIndex(prod => prod.id === id)
-        //carrito.splice(indice,1)
         setCarrito(carrito.filter(prod => prod.id !== id))
     }
 
@@ -57,7 +44,6 @@ export const CarritoProvider = (props) => {
 
     //Cantidad Total de productos en el carrito
     const getItemQuantity = () => {
-        //return carrito.length
         return carrito.reduce((acum, prod) => acum += prod.cant, 0)
     }
 

@@ -8,7 +8,7 @@ export const ItemCart = ({item}) => {
       }
 
     return (
-        <div className="card mt-3 cardCart  ">
+        <div className="card mt-3 cardCart mr-2 ">
             <div className="row g-0">
             <div className="col-md-4">
                 <img src={item.img} alt={`Imagen de ${item.nombre}`} className="img-fluid rounded-start " />

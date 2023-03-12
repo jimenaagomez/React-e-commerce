@@ -7,7 +7,7 @@ import { Carrousel } from '../Carrousel/Carrousel.jsx'
 
 
 export const ItemListContainer = () => {
-  const { idCategoria } = useParams() //sirve para consulta el parametro de la aplicacion, ejemplo, el que pones en el browser, na mas
+  const { idCategoria } = useParams()
   const [productos, setProductos] = useState([])
   useEffect(() => {
     if(idCategoria){
@@ -20,7 +20,7 @@ export const ItemListContainer = () => {
       
 
     }else{
-      getProductos().then(products => { //BBD SGNIFICA BASE DE DATOS, funcion asincrona tipo fetch en funciones.js
+      getProductos().then(products => {
         const prods = products.filter(prod=> prod.stock > 0)
         const items = <ItemList prods={prods} plantilla="item"/>
         console.log(items)
@@ -43,4 +43,3 @@ export const ItemListContainer = () => {
     </>
   )
 }
-//fondoNegro

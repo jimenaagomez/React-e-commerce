@@ -7,13 +7,11 @@ export const Cart = () => {
   return (
     <>{
       carrito.length === 0
-        ? <div className="container alineation">
+        ? <div className="container alineation ">
           <div className="align-content-center ">
-            <h2>Carrito vacio</h2>
-            <div className="m-5 ">
-              
-            </div>
-            <Link className="nav-link" to={"/"}> <button className="btn btn-primary ">Continuar comprando</button></Link>
+            <h2>El carrito está vacio, agregue un producto para finalizar compra</h2>
+            <br />
+            <Link className="nav-link" to={"/"}> <button className="btn btn-primary  ">Continuar comprando</button></Link>
           </div>
         </div>
         :

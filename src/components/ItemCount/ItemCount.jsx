@@ -1,9 +1,7 @@
 import { useState } from "react"
 export const ItemCount = ({ ValInicial, stock, onAdd }) => {
 
-  const [contador, setContador] = useState(ValInicial) //Defino un estado con valor inicial 1
-
-  //contador-- => contador = contador - 1 ESTO NO SE PUEDE HACER
+  const [contador, setContador] = useState(ValInicial) 
 
   const sumar = () => contador < stock && setContador(contador + 1)
   const restar = () => contador > ValInicial && setContador(contador - 1)
