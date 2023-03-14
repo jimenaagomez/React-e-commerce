@@ -12,7 +12,7 @@ npx create-react-app my-app
 
 ``` 
 
-*Para ejecutar la app puedes usar el siguiente comando en la terminal: 
+* Para ejecutar la app puedes usar el siguiente comando en la terminal: 
 
 ``` 
 
