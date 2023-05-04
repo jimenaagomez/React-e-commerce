@@ -36,5 +36,4 @@ npx create-react-app my-app
 * Uso de Firestore como base de datos para almacenar productos y ordenes.
 
 **Diseño responsive**
-**Diseño**
 
