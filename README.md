@@ -1,5 +1,6 @@
 ## `HUERTA GÓMEZ`
 
+¡Actualmente en mantenimiento!
 Huerta gómez es una  página web, desarrollada con React Js, donde puedes mirar precios o comprar frutas o verduras.  
 
 [¡Visítanos!](https://react-e-commerce-eight.vercel.app/) 
